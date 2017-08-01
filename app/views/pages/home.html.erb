@@ -10,19 +10,33 @@
     <p>stats</p>
   </div>
 </div>
-    </div>
-    
-    <div class="col-xs-6"> 
-    <div class="panel panel-primary">
+   <div class="panel panel-primary">
   <div class="panel-heading">
-    <h3 class="panel-title">Feed</h3>
+    <h3 class="panel-title">Trends</h3>
   </div>
   <div class="panel-body">
-    <p>feed</p>
+    <p>trends</p>
   </div>
 </div>
     </div>
     
+   
+    <div class="col-xs-6"> 
+    <div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Punch-Communal Nexus</h3>
+  </div>
+  </div>
+     <% for @p in @posts %>
+    <div class="panel panel-primary">
+  <div class="panel-body">
+    <p><%= @p.content %></p>
+  </div>
+   </div>
+   <% end %>
+    </div>
+    
+  
     <div class="col-xs-3"> 
     <div class="panel panel-primary">
   <div class="panel-heading">
@@ -36,17 +50,3 @@
     
       </div>
 
-<!----- Begin row 2 ------------->
-<div class="row">
- <div class="col-xs-3"> 
-    <div class="panel panel-primary">
-  <div class="panel-heading">
-    <h3 class="panel-title">Trends</h3>
-  </div>
-  <div class="panel-body">
-    <p>trends</p>
-  </div>
-</div>
-    </div>
-    
-      </div>
