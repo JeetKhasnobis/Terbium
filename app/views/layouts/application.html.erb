@@ -6,8 +6,32 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
 <%= render '/layouts/nav' %>
+<% if params[:id] != nil %>
+  <% @url = '/user/' + params[:id] %>
+<% if current_page?(@url) %>
+  <img src="/header.jpg" class="profile-banner">
+    <div class="row">
+      <div class="col-sm-12" style="background-color: white;">
+        <div class="container">
+          <div class="col-sm-3">&nbsp;</div>
+          <div class="col-sm-6" style="margin-top: 5px">
+            <div class="col-sm-2" style="font-size: 100%; opacity: 3.0; color: #b40300; font-weight: bold;">PUNCHES<br>
+                    <h6 style="color: #b40300; font-size: 150%; "><%= User.find_by_username(params[:id]).posts.count %></h6></div>
+            <div class="col-sm-2" style="font-size: 100%; opacity: 3.0; color: #b40300; font-weight: bold;">FOLLOWERS<br>
+                    <h6 style="color: #b40300; font-size: 150%;"><%= User.find_by_username(params[:id]).followers.count %></h6></div>
+            <% if user_signed_in? %>
+              <div class="col-sm-8" style="text-align: right; margin-top: 5px;"><a href="/users/edit"><li type="button" class="btn btn-primary" style="color: white; opacity: 3.0; font-weight: bold;">EDIT PROFILE</li></a></div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
 <div class="container">
    <span class="notice"><%= notice %></span>
        <span class="alert"><%= alert %></span>
