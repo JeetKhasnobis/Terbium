@@ -22,6 +22,18 @@
             </div>
           </div>
 </div>
+  <div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Whom to Follow?</h3>
+  </div>
+  <div class="panel-body">
+             <h5 style="color: grey; font-size: 125%;"></h5>
+    <% for @u in @toFollow do %>
+               <p style="font-weight: bold; opacity: 0.85;" ><a href="/user/<%= @u.username %>"><%= @u.username %></a></p>
+             <% end %>
+          </div>
+</div>
+  
   
     </div>
     
