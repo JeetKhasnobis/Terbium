@@ -10,7 +10,7 @@
                 <% else %>
                     <%= form_for(current_user.active_relationships.find_by(followed_id: user.id),
                         html: { method: :delete }) do |f| %>
-                        <%= f.submit "Contradict", class: "btn" %>
+                        <%= f.submit "Contradict", class: "btn btn-primary" %>
                     <% end %>
                 <% end %>
             </center>
